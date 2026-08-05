@@ -1,11 +1,6 @@
-````markdown
-# Real-Time Crowd Analytics & Predictive Monitoring System
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-ee4c2c.svg)](https://pytorch.org/)
-[![Flask](https://img.shields.io/badge/Flask-Web%20Framework-000000.svg)](https://flask.palletsprojects.com/)
-[![YOLOv8](https://img.shields.io/badge/YOLOv8-Object%20Detection-00FFFF.svg)](https://ultralytics.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+## Crowd Analytics & Predictive Monitoring System
+
 
 A hybrid computer vision and predictive analytics platform designed to monitor spatial crowd density in real time, generate short-term trend forecasts, and evaluate crowd management metrics through an interactive web dashboard.
 
@@ -20,16 +15,16 @@ This project combines multiple deep learning approaches to overcome these limita
 The complete pipeline consists of four major components:
 
 1. **Object Detection (YOLOv8)**  
-   Performs fast real-time person detection using bounding boxes. It provides accurate headcounts in low and medium-density environments while generating live crowd statistics and alert information.
+   Performs fast real-time person detection using bounding boxes. It provides accurate headcounts in low- and medium-density environments while generating live crowd statistics and alerts.
 
 2. **Density Map Estimation (CSRNet)**  
    Utilizes a VGG-16 backbone with dilated convolution layers to generate continuous density maps. Instead of detecting each individual person, CSRNet estimates crowd density spatially, making it highly effective in heavily congested scenes.
 
 3. **Temporal Trend Forecasting**  
-   Converts historical crowd counts into time-series sequences to project future crowd sizes approximately **5 seconds ahead** using **LSTM Neural Networks** and **Moving Average** forecasting.
+   Converts historical crowd counts into time-series sequences to forecast crowd sizes approximately **5 seconds into the future** using **LSTM Neural Networks** and **Moving Average** forecasting.
 
 4. **Interactive Flask Dashboard**  
-   A web application (`app.py`) allowing users to upload surveillance videos, trigger pipeline processing, display current vs. predicted headcounts, generate crowd alerts, and monitor evaluation metrics.
+   A web application (`app.py`) allowing users to upload surveillance videos, trigger pipeline processing, display current and predicted headcounts, generate crowd alerts, and monitor evaluation metrics.
 
 ---
 
@@ -43,7 +38,7 @@ The complete pipeline consists of four major components:
 - Evaluation telemetry and benchmark visualization
 - Automated graph and report generation
 - ShanghaiTech dataset evaluation support
-- Clean and modular project architecture
+- Modular and well-organized project architecture
 
 ---
 
@@ -170,9 +165,9 @@ Regression metrics tracking headcount error against ground truth evaluations.
 | Metric | Score / Value | Description |
 |--------|---------------|-------------|
 | Mean Absolute Error (MAE) | **470.65** | Mean absolute headcount deviation |
-| Root Mean Squared Error (RMSE) | **687.74** | Root mean square variance on dense frames |
+| Root Mean Squared Error (RMSE) | **687.74** | Root mean squared headcount error |
 
-> **Note:** Raw evaluation terminal outputs, sample video clips (`sample_video.mp4`), and output logs are stored inside the **sample_data/** directory (see **sample_data/evaluation_results.jpg**).
+> **Note:** Raw evaluation outputs, sample video clips (`sample_video.mp4`), and output logs are stored inside the **sample_data/** directory (see **sample_data/evaluation_results.jpg**).
 
 ---
 
@@ -180,7 +175,7 @@ Regression metrics tracking headcount error against ground truth evaluations.
 
 ## 1. Installation
 
-Clone the repository.
+Clone the repository:
 
 ```bash
 git clone https://github.com/your-username/crowd-management-system.git
@@ -216,7 +211,7 @@ pip install -r requirements.txt
 
 ## 2. Running the Flask Dashboard
 
-Launch the web application.
+Launch the Flask application.
 
 ```bash
 python app.py
@@ -224,7 +219,7 @@ python app.py
 
 Open your browser and navigate to:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
@@ -298,7 +293,4 @@ checkpoints/
 - GPU acceleration using TensorRT
 - Transformer-based temporal crowd forecasting
 - Edge AI deployment on NVIDIA Jetson devices
-
----
-
 
